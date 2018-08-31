@@ -1,0 +1,16 @@
+<view class='containerAll'>
+
+  <text class='step'>第3/4步</text>
+
+  <text class='steptitle'>操作"{{deviceImages[clkDeviceNum].title}}"进入微信配网模式</text>
+
+  <block wx:for="{{deviceImages[clkDeviceNum].step}}" wx:key="navItems">
+    <image wx:if='{{index!=0}}' class="stepimg" src="../../../images/next.png" mode='aspectFit'></image>
+    <text class='stepText'>{{item}}</text>
+  </block>
+
+  <button class='nextBtn' bindtap='nextBtnClk'>下一步</button>
+
+  <text class='warn'>注意:\n如果设备软件版本号过低则无法进入微信配网状态。此时请去手机应用商店下载‘享佳净’APP后对码添加设备</text>
+  
+</view>

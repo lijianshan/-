@@ -40,7 +40,7 @@ Page({
       title: "设备类型: 827控制器"
     }, {
       imageurl: "../../images/deviceList_device0.png",
-      title: "设备类型: 其他设备"
+      title: "设备类型: 未知设备"
     }]
   },
   /**

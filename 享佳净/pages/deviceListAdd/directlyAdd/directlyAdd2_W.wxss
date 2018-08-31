@@ -1,0 +1,33 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.step{
+  margin-top: 20rpx;
+  font-size: 22px;
+  color:#068de7; 
+}
+.steptitle{
+  margin: 10rpx 0 40rpx 0;
+  color:#068de7; 
+}
+.deviceListView{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  background-color: saddlebrown;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.clkDeviceTitle{
+  margin-top: 30rpx;
+}
+.nextBtn {
+  width: 90%;
+  color: white;
+  background-color: #068de7;
+  margin-top: 60rpx;
+}

@@ -1,4 +1,4 @@
-var util = require('../../utils/util.js')
+var util = require('../../../utils/util.js')
 
 Page({
 
@@ -6,11 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    opacity: '0'
   },
-  
+
   // 扫码添加按键点击
-  scancodeClk: function () {
+  scancodeClk: function() {
     var that = this
     wx.scanCode({
       success: (res) => {
@@ -21,11 +21,17 @@ Page({
       },
       fail: (res) => {
         util.showToast("扫描二维码失败")
+      },
+      complete: function() {
+        // 此项无意义，仅用于临时解决安卓端调用微信扫码接口返回后白屏问题。
+        that.setData({
+          opacity: Math.random()
+        })
       }
     })
   },
   // 检测扫描到的二维码的合法性
-  checkScancodeText: function (scancodebuff) {
+  checkScancodeText: function(scancodebuff) {
     if ((scancodebuff.length != 5) || (scancodebuff[0] != "DNKAC")) {
       util.showToast("扫描的非设备二维码")
       return false
@@ -33,7 +39,7 @@ Page({
     return true
   },
   // 添加普通用户
-  sendAddSlaverequest: function (scancodebuff) {
+  sendAddSlaverequest: function(scancodebuff) {
     util.request({
       url: "/equipment/addSlave",
       data: {
@@ -42,7 +48,7 @@ Page({
         timestamp: scancodebuff[2],
         isHouseHolder: scancodebuff[1] == "A" ? "false" : "houseHolder"
       },
-      success: function (result) {
+      success: function(result) {
         if (util.checkError(result.data) == true) {
           util.showToast("扫码添加设备成功")
           wx.switchTab({

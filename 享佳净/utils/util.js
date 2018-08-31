@@ -31,92 +31,6 @@ function showToast(text) {
   })
 }
 
-// 将UID字符串提取出设备的秘钥
-function uidToUIDKey(uidStr) {
-  var uidBuff = hexStringToByte(uidStr)
-
-  var oneBuff = [],
-    zeroBuff = [],
-    oneCount = 0,
-    zeroCount = 0
-  for (var i = 0; i < 2; i++)
-    for (var j = 0; j < 8; j++) {
-      if ((uidBuff[i] >> (7 - j)) & 0x01) {
-        oneBuff[oneCount] = i * 8 + j
-        oneCount++
-      } else {
-        zeroBuff[zeroCount] = i * 8 + j
-        zeroCount++
-      }
-    }
-
-  var keyBuff = []
-  for (var i = 0; i < 5; i++) {
-    if (oneCount >= 5) keyBuff[i] = uidBuff[oneBuff[i] + 2]
-    else keyBuff[i] = uidBuff[zeroBuff[i] + 2]
-  }
-
-  var strBuff1 = keyBuff.slice(0, 3)
-  var strBuff2 = keyBuff.slice(3)
-
-  var chkBuff2 = uidBuff.slice(0, 2)
-  var chkBuff1 = uidBuff.slice(17)
-
-  strBuff1[0] ^= chkBuff1[0]
-  strBuff1[1] ^= chkBuff1[1]
-  strBuff1[2] ^= chkBuff1[2]
-  strBuff2[0] ^= chkBuff2[0]
-  strBuff2[1] ^= chkBuff2[1]
-
-  keyBuff = strBuff1.concat(strBuff2)
-
-  var keyStr = ''
-  for (var i = 0; i < 5; i++) {
-    keyStr = keyStr.concat(String.fromCharCode(keyBuff[i]))
-  }
-
-  return keyStr
-}
-// 根据设备秘钥得出设备的类型名称
-function uidkeyToDeviceModel(uidkey) {
-  var unknownModel = {
-    'uidkey': 'unknown',
-    'name': '未知设备',
-    'id': 0
-  }
-  var devicemodel = [{
-      'uidkey': 'DNKAA',
-      'name': '807控制器',
-      'id':1
-    },
-    {
-      'uidkey': 'DNKAB',
-      'name': '壁挂机',
-      'id': 2
-    },
-    {
-      'uidkey': 'DNKAC',
-      'name': '806控制器',
-      'id': 3
-    },
-    {
-      'uidkey': 'DNKAL',
-      'name': '817控制器',
-      'id': 4
-    },
-    {
-      'uidkey': 'DNKAO',
-      'name': '827控制器',
-      'id': 5
-    },
-  ]
-  for (var i = 0; i < devicemodel.length;i++){
-    if (uidkey == devicemodel[i].uidkey ) 
-      return devicemodel[i]
-  }
-  
-  return unknownModel
-}
 // 判断字符类型 返回类型 0未知 1数字 2小写字母 3大写字母
 function checkISLetter(str) {
   var regLowerCase = new RegExp('[a-z]', 'g'); //判断用户输入的是否为小写字母
@@ -156,6 +70,40 @@ function validatemobile(mobile) {
   }
   return true;
 }
+//把16进制字符串转换成字节数组
+function hexStringToByte(String) {
+  var len = (String.length / 2);
+  var achar = [];
+  var result = [];
+
+  for (var i = 0; i < len; i++) {
+    var pos = i * 2;
+    achar[i] = String.substring(pos, pos + 2)
+    result[i] = parseInt(achar[i], 16);
+  }
+  // console.log("achar" + achar);
+  return result;
+}
+//把字节数组转换成16进制字符串
+function Bytes2Str(arr) {
+  var str = "";
+  for (var i = 0; i < arr.length; i++) {
+    var tmp = arr[i].toString(16);
+    if (tmp.length == 1) {
+      tmp = "0" + tmp;
+    }
+    str += tmp;
+  }
+  return str;
+}
+//把字符串转成ASCII数组
+function stringToASCIIByte(str) {
+  var buff = []
+  for (var i = 0; i < str.length; i++) {
+    buff[i] = str.charAt(i).charCodeAt()
+  }
+  return buff
+}
 // 退出登陆状态
 function quitelogin() {
   wx.setStorageSync('islogin', "no")
@@ -192,41 +140,6 @@ function checkError(data) {
   }
   return true
 }
-
-//把16进制字符串转换成字节数组
-function hexStringToByte(String) {
-  var len = (String.length / 2);
-  var achar = [];
-  var result = [];
-
-  for (var i = 0; i < len; i++) {
-    var pos = i * 2;
-    achar[i] = String.substring(pos, pos + 2)
-    result[i] = parseInt(achar[i], 16);
-  }
-  // console.log("achar" + achar);
-  return result;
-}
-//把字节数组转换成16进制字符串
-function Bytes2Str(arr) {
-  var str = "";
-  for (var i = 0; i < arr.length; i++) {
-    var tmp = arr[i].toString(16);
-    if (tmp.length == 1) {
-      tmp = "0" + tmp;
-    }
-    str += tmp;
-  }
-  return str;
-}
-//把字符串转成ASCII数组
-function stringToASCIIByte(str) {
-  var buff = []
-  for (var i = 0; i < str.length; i++) {
-    buff[i] = str.charAt(i).charCodeAt()
-  }
-  return buff
-}
 // 网络请求request
 var requestHandler = {
   url: '',
@@ -235,7 +148,6 @@ var requestHandler = {
   fail: function() {},
   complete: function() {}
 }
-
 function request(requestHandler, isshow) {
   var data = requestHandler.data;
   var url = requestHandler.url;
@@ -271,8 +183,6 @@ function request(requestHandler, isshow) {
 
 module.exports = {
   formatTime: formatTime,
-  uidToUIDKey: uidToUIDKey,
-  uidkeyToDeviceModel: uidkeyToDeviceModel,
   validatemobile: validatemobile,
   checkISLetter: checkISLetter,
   quitelogin: quitelogin,

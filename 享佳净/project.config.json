@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.2.4",
 	"appid": "wx413600cfb6ba145c",
 	"projectname": "%E4%BA%AB%E4%BD%B3%E5%87%80",
 	"isGameTourist": false,
@@ -21,6 +21,10 @@
 			"list": []
 		},
 		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
 			"current": -1,
 			"list": []
 		},

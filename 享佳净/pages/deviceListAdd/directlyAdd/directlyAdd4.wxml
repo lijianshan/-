@@ -1,0 +1,21 @@
+<scroll-view scroll-y="true" class='containerAll'>
+  <view class="container">
+
+    <text class='step'>第4/4步</text>
+
+    <text class='steptitle'>配置设备的家庭网络</text>
+
+    <text class='title'>途径一(微信公众号配网)：</text>
+    <text class='value'>点击右上角【···】关于按钮 — 【关于享佳净】— 【相关公众号】— 【进入环境智能公众号】— 【设备配网】— 按提示进行配网</text>
+    
+    <text class='title'>途径二(微信扫一扫)：</text>
+    <text class='value'> 打开微信【扫一扫】，扫描下方的二维码(可先点击二维码保存)后按提示进行配网</text>
+    <image bindtap="previewImg" mode="aspectFit" class='wifiSetQrcode' src="{{setWifiScanImgurl}}"></image>
+
+    <text class='title'>设备配网完成：回到主界面、Wi-Fi图标常亮</text>
+
+    <button class='finishBtn' bindtap='finishBtnClk'>设备配网完成，开始使用设备</button>
+
+  </view>
+
+</scroll-view>

@@ -1,0 +1,18 @@
+<view class='containerAll'>
+
+  <text class='step'>第2/4步</text>
+
+  <text class='steptitle'>选择要配置网络的设备类型</text>
+
+  <swiper indicator-dots="true" bindchange='changeClk' class='deviceListView'>
+    <block wx:for="{{deviceImages}}" wx:key="navItems">
+      <swiper-item>
+        <image src="{{item.imageurl}}" class="slide-image" mode='aspectFit' />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <text class='clkDeviceTitle'>设备类型: {{deviceImages[clkDeviceNum].title}}</text>
+  <button class='nextBtn' bindtap='nextBtnClk'>下一步</button>
+
+</view>

@@ -1,13 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-    // 只有请求后，openSetting才会出现授权界面
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) { },
-      fail: function (res) { }
-    })
-    
     // 登录
     wx.login({
       success: res => {
@@ -22,6 +15,15 @@ App({
    
         }
       }
+    })
+  },
+
+  onShow:function(){
+    // 只有请求后，openSetting才会出现授权界面
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) { },
+      fail: function (res) { }
     })
   },
   globalData: {

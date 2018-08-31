@@ -1,6 +1,6 @@
-
-var util = require('../../../utils/util.js')
 const app = getApp()
+var util = require('../../../utils/util.js')
+var deviceModelHandle = require('../../../utils/comhandle/deviceModelHandle.js')
 
 Page({
 
@@ -72,8 +72,8 @@ Page({
       },
       success: function (result) {
         if (util.checkError(result.data) == true) {
-          var uidkey = util.uidToUIDKey(result.data.data.equipmentUID)
-          var modelname = util.uidkeyToDeviceModel(uidkey).name + ' (' + uidkey + ',' + result.data.data.equipmentModel +')' 
+          var uidkey = deviceModelHandle.uidToUIDKey(result.data.data.equipmentUID)
+          var modelname = deviceModelHandle.uidkeyToDeviceModel(uidkey).name + ' (' + uidkey + ',' + result.data.data.equipmentModel +')' 
           that.setData({
             'infoItem_value[0]': modelname,
             'infoItem_value[1]': result.data.data.equipmentUID,

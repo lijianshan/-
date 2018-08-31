@@ -1,5 +1,6 @@
 const app = getApp()
 var util = require('../../utils/util.js')
+var deviceModelHandle = require('../../utils/comhandle/deviceModelHandle.js')
 
 Page({
 
@@ -18,6 +19,7 @@ Page({
       "../../images/user3.png"
     ],
     deviceImages: [
+      //顺序必须与deviceModelHandle.js里面的一致
       "../../images/deviceList_device0.png", //未知
       "../../images/deviceList_device1.png", //807
       "../../images/deviceList_device0.png", //壁挂机
@@ -123,11 +125,28 @@ Page({
   },
   // 添加设备
   deviceAddClk:function(){
-    wx.navigateTo({
-      url: '../deviceListAdd/deviceListAdd'
+    var that =this
+    wx.showActionSheet({
+      itemList: ['直接添加/网络配置', '分享添加'],
+      itemColor: "#545454",
+      success: function (res) {
+
+        if (res.tapIndex == 0){
+          wx.navigateTo({
+            url: '../deviceListAdd/directlyAdd/directlyAdd1'
+          })
+        }else{
+          wx.navigateTo({
+            url: '../deviceListAdd/shareAdd/shareAdd'
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
     })
   },
-  //
+  //关于设备列表描述点击
   aboutClk:function(){
     wx.navigateTo({
       url: '../deviceListAbout/deviceListAbout'
@@ -193,8 +212,8 @@ Page({
       that.data.slipEditing.items[i] = false
 
       state.name = list[i].equipmentAlias
-      var uidkey = util.uidToUIDKey(list[i].equipmentUID)
-      state.modelId = util.uidkeyToDeviceModel(uidkey).id
+      var uidkey = deviceModelHandle.uidToUIDKey(list[i].equipmentUID)
+      state.modelId = deviceModelHandle.uidkeyToDeviceModel(uidkey).id
       state.user = list[i].isSuper == "true" ? 0 : (list[i].isSuper == "false" ? 1 : 2)
       state.UID = list[i].equipmentUID
       state.line = runstate[i].errorCode == 'ERR-1202' ? 'off' : 'on'

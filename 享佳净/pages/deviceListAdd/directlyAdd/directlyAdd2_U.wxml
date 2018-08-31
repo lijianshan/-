@@ -1,0 +1,20 @@
+<scroll-view scroll-y="true" class='containerAll'>
+  <view class="container">
+
+    <text class='step'>第2/4步</text>
+
+    <text class='steptitle'>设备添加成功</text>
+
+    <text class='title'>添加的设备类型：</text>
+    <text class='value'>{{modelName}}</text>
+    
+    <text class='title'>设备的UID：</text>
+    <text class='value'>{{uid}}</text>
+
+    <button class='nextBtn' bindtap='nextBtnClk'>开始配置设备的家庭网络</button>
+
+    <button class='finishBtn' bindtap='finishBtnClk'>网络已经配置过，开始使用</button>
+
+  </view>
+
+</scroll-view>

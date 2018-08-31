@@ -25,7 +25,6 @@ Page({
     this.setData({
       deviceInfo: app.globalData.mainDeviceInfo,
     })
-    // this.sendGetDeviceOtherInforequest()
   },
 
   /**
@@ -153,38 +152,5 @@ Page({
       })
 
     }
-  },
-  // 获取设备信息
-  sendGetDeviceOtherInforequest: function () {
-    var that = this
-    util.request({
-      url: "/equipment/query",
-      data: {
-        equipmentUID: that.data.deviceInfo.UID,
-        token: wx.getStorageSync('token'),
-      },
-      success: function (result) {
-        if (util.checkError(result.data) == true) {
-          var buff =[]
-          buff = result.data.data.softwareVersion.split('.')
-          var versionNum = parseInt(buff[0])*100+parseInt(buff[1])*10+parseInt(buff[2])
-          var uidkey = util.uidToUIDKey(result.data.data.equipmentUID)
-          if ((uidkey =='DNKAC')&&(versionNum>=301)){
-
-          } else{
-            that.setData({
-              versionsViewShow:true,
-              softwareVersion: result.data.data.softwareVersion
-            })
-          }
-        } else {
-          util.showToast("获取设备软件版本失败")
-          setTimeout(function () { wx.navigateBack() }, 1500);
-        }
-      },
-      fail: function (result) {
-        setTimeout(function () { wx.navigateBack() }, 1500);
-      }
-    }, true)
   },
 })
