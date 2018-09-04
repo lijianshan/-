@@ -104,6 +104,15 @@ function stringToASCIIByte(str) {
   }
   return buff
 }
+//把ASCII数组转成字符串
+function stringToASCIIByte(buff) {
+  var str = ''
+  for (var i = 0; i < buff.length; i++) {
+    str += String.fromCharCode(buff[i])
+  }
+  return str
+}
+
 // 退出登陆状态
 function quitelogin() {
   wx.setStorageSync('islogin', "no")
@@ -189,6 +198,7 @@ module.exports = {
   checkError: checkError,
   hexStringToByte: hexStringToByte,
   Bytes2Str: Bytes2Str,
+  stringToASCIIByte: stringToASCIIByte,
   stringToASCIIByte: stringToASCIIByte,
   showToast: showToast,
   request: request

@@ -15,6 +15,10 @@ page{
 .value{
   margin: 30rpx;
 }
+.warn{
+  margin: 30rpx;
+  font-size: 12px;
+}
 
 button{
   width: 90%;

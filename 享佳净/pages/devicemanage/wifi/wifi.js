@@ -106,18 +106,16 @@ Page({
     this.setData({
       connectWifiName: e.detail.value
     })
+    console.log("wifinameInput")
+    console.log(e)
   },
   // 密码1输入
   passwordInput: function (e) {
-    this.setData({
-      password1: e.detail.value
-    })
+    this.data.password1 = e.detail.value
   },
   // 密码2输入
   passwordAgainInput: function (e) {
-    this.setData({
-      password2: e.detail.value
-    })
+    this.data.password2 = e.detail.value
   },
   // 设置按钮
   setClk: function() {

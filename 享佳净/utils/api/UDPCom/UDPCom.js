@@ -251,6 +251,16 @@ function getUDP_weeks(uidStr, requestHandler) {
   commandData = getUDPCommandData(combuff, databuff)
   httpsRequest(uidStr, commandData, requestHandler)
 }
+// 获取设备信息
+function getUDP_DeviceInfo(uidStr, requestHandler) {
+  var combuff = [0x03, 0x03]
+  var data = [0x00, 0x00, 0x00, 0x00]
+  var databuff = []
+  databuff = databuff.concat(util.hexStringToByte(uidStr)).concat(data)
+  var commandData = []
+  commandData = getUDPCommandData(combuff, databuff)
+  httpsRequest(uidStr, commandData, requestHandler)
+}
 
 module.exports = {
   getUDPCommandData: getUDPCommandData,
@@ -269,4 +279,5 @@ module.exports = {
   sendUDP_Restart: sendUDP_Restart,
   getUDP_deviceState: getUDP_deviceState,
   getUDP_weeks: getUDP_weeks,
+  getUDP_DeviceInfo: getUDP_DeviceInfo,
 }
