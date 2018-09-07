@@ -2,7 +2,7 @@
 
   <view class='iconView'>
     <image class="iconimg" src="../../images/AppIcon.png" mode='aspectFit'></image>
-    <text class='versionnumber'>版本号：1.2.1</text>
+    <text class='versionnumber'>版本号：1.2.2</text>
   </view>
   <!-- 克服电话 -->
   <view class='cell' bindtap='phoneClk'>
@@ -26,4 +26,13 @@
     <image class="iconRight" src="../../images/copy.png" mode='aspectFit' bindtap='copyaddressClk'></image>
   </view>
 
+  <view class='cell'>
+    <image class="iconLeft" src="../../images/feedback.png" mode='aspectFit'></image>
+    <button open-type="feedback" class='otherBtn' hover-class="none">意见反馈</button>
+  </view>
+
+  <view class='cell'>
+    <image class="iconLeft" src="../../images/service.png" mode='aspectFit'></image>
+    <button open-type="contact" class='otherBtn' hover-class="none">在线客服</button>
+  </view>
 </view>

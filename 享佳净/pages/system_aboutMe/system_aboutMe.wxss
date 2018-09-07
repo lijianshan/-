@@ -54,4 +54,20 @@ page {
   padding-right: 10rpx;
   width: 5%;
   height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
+
+.otherBtn {
+  width: 80%;
+  background-color: white;
+  font-size: 16px;
+  color: #545454;
+  /* color: white; */
+  /* background-color: #068de7; */
+  /* margin-top: 20rpx; */
+}
+button[class="otherBtn"]::after {
+  border: 0;
+} 

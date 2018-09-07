@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    setWifiScanImgurl: "https://xiangjiajing-1257169638.cos.ap-guangzhou.myqcloud.com/setWifiScan.jpg"
+    setWifiScanImgurl: "https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/setWifiScan.jpg"
   },
 
   /**
