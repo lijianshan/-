@@ -35,7 +35,7 @@ Page({
     } else {
       // 温度校准相关组件
       this.setData({
-        tempPickerIndex: (info.temp + 50) / 0.5
+        tempPickerIndex: info.temp>50?200:(info.temp + 50) / 0.5
       })
       var tempPicker = []
       for (var i = 0; i <= 200; i++) {

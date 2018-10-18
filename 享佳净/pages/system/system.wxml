@@ -12,6 +12,6 @@
     </view>
   </block>
 
-  <button class='quiteBtn' type='warn' bindtap='quiteClk'>退出登陆</button>
+  <button class='quiteBtn' type='warn' bindtap='quiteClk'>退出登录</button>
 
 </view>

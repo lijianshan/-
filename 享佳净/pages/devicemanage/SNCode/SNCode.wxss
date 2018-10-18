@@ -35,13 +35,13 @@ page {
 
 .modifyBtn {
   color:  white; 
-   background-color: #068de7;
+  background-color: #068de7;
   margin-right: 10rpx;
 }
 
 .addBtn {
   margin-top: 10rpx;
-  margin-left: 0rpx;
+  width: 100%;
   color: white;
   background-color: #068de7;
 }

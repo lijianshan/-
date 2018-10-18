@@ -178,7 +178,6 @@ Page({
         if (util.checkError(result.data) == true) {
           that.sendRegisterRequest()
         }
-        that.sendRegisterRequest()
       },
     },true)
   },

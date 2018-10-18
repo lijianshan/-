@@ -7,7 +7,7 @@
     <button bindtap='wifiListClk'>WI-FI列表选择</button>
   </view>
 
-  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入需要设置的Wi-Fi网络名称" bindinput="wifinameInput" value="{{connectWifiName}}" />
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入需要设置的WI-FI网络名称" bindinput="wifinameInput" value="{{connectWifiName}}" />
 
   <view class='cutView'>
   </view>
@@ -16,9 +16,9 @@
     <text>WI-FI密码：</text>
   </view>
 
-  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入Wi-Fi密码" bindinput="passwordInput" />
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入WI-FI密码" bindinput="passwordInput" />
 
-  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请再次输入Wi-Fi的密码" bindinput="passwordAgainInput" />
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请再次输入WI-FI的密码" bindinput="passwordAgainInput" />
 
   <button class='cellView setBtn' bindtap='setClk'>设置WI-FI</button>
 

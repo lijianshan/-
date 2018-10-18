@@ -39,12 +39,11 @@ page {
   height: 80%;
   margin-left: 10rpx;
 }
-.loginLab {
-  width: 20%;
+
+.inputView input{
+  width: 80%;
   height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* text-align: center; */
 }
 
 /*忘记密码 注册*/

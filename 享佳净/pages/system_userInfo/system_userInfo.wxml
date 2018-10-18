@@ -14,14 +14,14 @@
   <!-- 用户名 -->
   <view class='cell'>
     <text class='title'>用户名:</text>
-    <input class="value" placeholder-style="color:#545454" placeholder="{{userInfo.name}}" bindinput="nameInput" />
+    <input class="value" placeholder-style="color:#545454" value="{{userInfo.name}}" bindinput="nameInput" />
     <text class='iconRight'>></text>
   </view>
 
   <!-- 电话 -->
   <view class='cell'>
     <text class='title'>电话:</text>
-    <input class="value" type='number' placeholder-style="color:#545454" placeholder="{{userInfo.phone}}" bindinput="phoneInput" />
+    <input class="value" type='number' placeholder-style="color:#545454" value="{{userInfo.phone}}" bindinput="phoneInput" />
     <text class='iconRight'>></text>
   </view>
 
@@ -41,7 +41,7 @@
   <!-- 详细地址 -->
   <view class='cell'>
     <text class='addresstitle'>详细:</text>
-    <input class="addressvalue" placeholder-style="color:#545454" placeholder="{{userInfo.userAddressDetails}}" bindinput="userAddressDetailsInput" />
+    <input class="addressvalue" placeholder-style="color:#545454" value="{{userInfo.userAddressDetails}}" bindinput="userAddressDetailsInput" />
     <text class='iconRight'>></text>
   </view>
   <button class='saveBtn' bindtap='saveClk'>保存</button>

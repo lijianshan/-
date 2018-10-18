@@ -8,14 +8,14 @@
     <!--账号-->
     <view class="inputView">
       <image class="nameImage" src="../../images/user.png" mode='aspectFit'></image>
-      <label class="loginLab">账号</label>
+      <!-- <label class="loginLab">账号</label> -->
       <input class="inputText" placeholder-style="color:#ccc" placeholder="请输入账号" bindinput="phoneInput" type='number' value ="{{phone}}"/>
     </view>
 
     <!--密码-->
     <view class="inputView">
       <image class="keyImage" src="../../images/password.png" mode='aspectFit'></image>
-      <label class="loginLab">密码</label>
+      <!-- <label class="loginLab">密码</label> -->
       <input password="true" placeholder-style="color:#ccc" placeholder="请输入密码" bindinput="passwordInput" />
     </view>
 

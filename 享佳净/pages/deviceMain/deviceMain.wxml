@@ -58,7 +58,7 @@
     </view>
     <view class='roomstate borderright'>
       <text wx:if="{{roomAirStateInfo.humidity>253}}">—</text>
-      <text wx:else>{{roomAirStateInfo.humidity}}%</text>
+      <text wx:else>{{roomAirStateInfo.humidity}}RH%</text>
     </view>
     <view class='roomstate borderright'>
       <text wx:if="{{roomAirStateInfo.co2>65533}}">—</text>

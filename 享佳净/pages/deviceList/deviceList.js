@@ -177,6 +177,10 @@ Page({
       success: function(result) {
         if (util.checkError(result.data) == true) {
           that.sendGetDeviceListStaterequest(result.data.data, isshow)
+        } else if (result.data.errorCode == "ERR-1003") {//查询设备列表为空
+          that.setData({
+            deviceStateList: "",
+          })
         }
       },
     }, isshow)

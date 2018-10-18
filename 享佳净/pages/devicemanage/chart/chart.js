@@ -219,6 +219,9 @@ Page({
         name: 'PM2.5',
         data: that.data.pm25Week,
       }],
+      yAxis: {
+        min: 0,
+      },
       width: that.data.chartView.width,
       height: that.data.chartView.height,
     }
@@ -236,6 +239,9 @@ Page({
         name: 'CO2',
         data: that.data.co2Week,
       }],
+      yAxis: {
+        min: 0,
+      },
       width: that.data.chartView.width,
       height: that.data.chartView.height,
     }
@@ -267,6 +273,10 @@ Page({
         name: '空气质量(优3 良2 差1)',
         data: that.data.gradeWeek
       }],
+      yAxis:{
+        min:0,  
+        max:3
+      },
       width: that.data.chartView.width,
       height: that.data.chartView.height
     }
