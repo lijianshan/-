@@ -40,15 +40,19 @@ Page({
       ["../../images/sauto.png", "../../images/sauto_on.png"],
       ["../../images/scapacity.png", "../../images/scapacity_on.png"]
     ],
+    runmodetext:["静音","手动","自动","智能"],
     loopmodeimages: [
       ["../../images/sinner_loop.png", "../../images/sinner_loop_on.png"],
-      ["../../images/soutside_loop.png", "../../images/soutside_loop_on.png"]
+      ["../../images/soutside_loop.png", "../../images/soutside_loop_on.png"],
+      ["../../images/hunf_loop.png", "../../images/hunf_loop_on.png"]
     ],
+    loopmodetext: ["内", "外", "混风"],
     smartswitchimages: [
       ["../../images/ssmartswitch_one.png", "../../images/ssmartswitch_one_on.png"],
       ["../../images/ssmartswitch_two.png", "../../images/ssmartswitch_two_on.png"],
       ["../../images/ssmartswitch_three.png", "../../images/ssmartswitch_three_on.png"],
     ],
+    smartswitchtext: ["开关1", "开关2", "开关3"],
     powerSwitchimages: [
       "../../images/mainswitch_close.png", "../../images/mainswitch_open.png"
     ],
@@ -292,7 +296,7 @@ Page({
     }) 
   },
   //定时关选择
-  offTimeChange: function(e) {
+  offTimeChangeClk: function(e) {
     var that = this
     var buffer = e.detail.value.split(":");
     var lastValueH = parseInt(buffer[0])

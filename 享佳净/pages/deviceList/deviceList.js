@@ -127,7 +127,7 @@ Page({
   deviceAddClk:function(){
     var that =this
     wx.showActionSheet({
-      itemList: ['直接添加/网络配置', '分享添加'],
+      itemList: ['直接添加', '分享添加'],
       itemColor: "#545454",
       success: function (res) {
 
@@ -144,6 +144,12 @@ Page({
       fail: function (res) {
         console.log(res.errMsg)
       }
+    })
+  },
+  //设备配网点击
+  deviceWifiSetClk:function() {
+    wx.navigateTo({
+      url: '../deviceListSetWIFi/deviceListSetWIFi1/deviceListSetWIFi1'
     })
   },
   //关于设备列表描述点击

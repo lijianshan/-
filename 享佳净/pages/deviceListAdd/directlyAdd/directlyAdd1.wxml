@@ -1,15 +1,11 @@
 <view class='containerAll'>
 
-  <text class='step'>第1/4步</text>
-
-  <text class='steptitle'>直接添加/设备配网</text>
+  <text class='steptitle'>直接添加</text>
 
   <text class='value'>扫设备机身上贴的UID二维码，进行直接添加设备</text>
 
-  <button class='nextBtn' bindtap='uidBtnClk'>扫UID码直接添加</button>
-
-  <button class='wifiBtn' bindtap='wifiBtnClk'>不添加设备，只配置家庭网络</button>
+  <button bindtap='uidBtnClk'>扫UID码直接添加</button>
 
   <text class='warn'>注意：\n直接添加设备会成为设备的管理员并且清空该设备原有的用户</text>
-  <!-- \n2、无UID二维码，此时请去手机应用商店下载‘享佳净’APP后对码添加设备 -->
+
 </view>

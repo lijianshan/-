@@ -1,6 +1,6 @@
 <view class='containerAll'>
 
-  <text class='step'>第2/4步</text>
+  <text class='step'>第1/3步</text>
 
   <text class='steptitle'>选择要配置网络的设备类型</text>
 

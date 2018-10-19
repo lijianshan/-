@@ -43,7 +43,7 @@ Page({
   onShow: function () {
     var that =this
     // 必须在得到得到画布的宽高后才能显示
-    that.showScoreAnimation(that.data.airWeeks[1].value, 500)
+    that.showScoreAnimation(that.data.airWeeks[1].value, that.data.airWeeks[1].color,500)
     that.setData({
       resultComment: that.data.airData.aqi
     })
@@ -63,7 +63,7 @@ Page({
 
     if (that.data.AQIspecificationShow == false) {
       // 必须在得到得到画布的宽高后才能显示
-      that.showScoreAnimation(that.data.airWeeks[1].value, 500)
+      that.showScoreAnimation(that.data.airWeeks[1].value, that.data.airWeeks[1].color, 500)
       that.setData({
         resultComment: that.data.airData.aqi
       })
@@ -85,7 +85,7 @@ Page({
     })
   },
   // 显示空气质量指数圆圈
-  showScoreAnimation: function (rightItems, totalItems) {
+  showScoreAnimation: function (rightItems,color, totalItems) {
     var that = this;
     var copyRightItems = 0;
     clearInterval(that.data.timer)
@@ -98,7 +98,7 @@ Page({
           var circleLineW = 6
           var circleX = that.data.circleViewWidth / 2
           var circleY = that.data.circleViewWidth / 2
-          var circleR = (that.data.circleViewWidth - circleLineW) / 2
+          var circleR = (that.data.circleViewWidth) / 2 - circleLineW
           // 这部分是灰色底层
           var cxt_arc = wx.createCanvasContext('canvasArc');
           cxt_arc.setLineWidth(circleLineW); //绘线的宽度
@@ -110,7 +110,7 @@ Page({
 
           //这部分进度部分
           cxt_arc.setLineWidth(circleLineW);
-          cxt_arc.setStrokeStyle('#f70404');
+          cxt_arc.setStrokeStyle(color);
           cxt_arc.setLineCap('round')
           cxt_arc.beginPath(); //开始一个新的路径
           cxt_arc.arc(circleX, circleY, circleR, -Math.PI * 1 / 2, 2 * Math.PI * (copyRightItems / totalItems) - Math.PI * 1 / 2, false);
@@ -130,7 +130,8 @@ Page({
       grades: '',
       title: '',
       tips: '',
-      imageUrl: ''
+      imageUrl: '',
+      color: ''
     }
     var airWeeks = [air, air, air, air, air, air, air]
     //必须加这个，理由未知
@@ -169,31 +170,37 @@ Page({
         airWeeks[i].title = '优'
         airWeeks[i].tips = '各类人群可正常活动'
         airWeeks[i].imageUrl = "../../images/aqi1.png"
+        airWeeks[i].color = '#01E400'
       } else if ((airWeeks[i].value > 50) && (airWeeks[i].value <= 100)) {
         airWeeks[i].grades = 1
         airWeeks[i].title = '良'
         airWeeks[i].tips = '极少数异常敏感人群应减少户外活动'
         airWeeks[i].imageUrl = "../../images/aqi2.png"
+        airWeeks[i].color = '#FEE300'
       } else if ((airWeeks[i].value > 100) && (airWeeks[i].value <= 150)) {
         airWeeks[i].grades = 2
         airWeeks[i].title = '轻度污染'
         airWeeks[i].tips = '儿童、老年人及心脏病、呼吸系统疾病者应减少长时间、高强度的户外锻炼'
         airWeeks[i].imageUrl = "../../images/aqi3.png"
+        airWeeks[i].color = '#FF7E00'
       } else if ((airWeeks[i].value > 150) && (airWeeks[i].value <= 200)) {
         airWeeks[i].grades = 3
         airWeeks[i].title = '中度污染'
         airWeeks[i].tips = '儿童、老年人及心脏病、呼吸系统疾病者应减少长时间、高强度的户外锻炼，一般人群适量减少户外运动'
         airWeeks[i].imageUrl = "../../images/aqi4.png"
+        airWeeks[i].color = '#FE0000'
       } else if ((airWeeks[i].value > 200) && (airWeeks[i].value <= 300)) {
         airWeeks[i].grades = 4
         airWeeks[i].title = '中毒污染'
         airWeeks[i].tips = '老年人和心脏病、肺病患者应停留在室内。停止户外运动，一般人群减少户外运动'
         airWeeks[i].imageUrl = "../../images/aqi5.png"
+        airWeeks[i].color = '#98004B'
       } else {
         airWeeks[i].grades = 5
         airWeeks[i].title = '严重污染'
         airWeeks[i].tips = '老年人和病人应留在室内，避免体力小号，一般人群应避免户外活动'
         airWeeks[i].imageUrl = "../../images/aqi6.png"
+        airWeeks[i].color = '#810027'
       }
     }
     // 支持7天，目前只用5天即可
@@ -232,10 +239,12 @@ Page({
     var buff = []
     var d, t
 
-    buff = timeStr.split(' ')
-    buff = buff[0].split('-')
-    buff.shift()
-    d = buff.join('/')
+    // buff = timeStr.split(' ')
+    // buff = buff[0].split('-')
+    // buff.shift()
+    // d = buff.join('/')
+    
+    d = "更新时间"
 
     buff = timeStr.split(' ')
     buff = buff[1].split(':')

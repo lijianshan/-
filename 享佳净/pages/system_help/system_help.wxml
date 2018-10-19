@@ -7,7 +7,7 @@
 
   <view class=' cell'>
     <text class='titel'>添加设备</text>
-    <text class='value' space="nbsp">添加设备分为以下2种\n\n①直接添加设备操作流程:\n【设备】— 【添加设备】— 【直接添加/网络配置】— 按提示操作。\n\n②分享添加设备操作流程:\n【设备】— 【添加设备】— 【分享添加】— 按提示操作。</text>
+    <text class='value' space="nbsp">添加设备分为以下2种\n\n①直接添加设备操作流程:\n【设备】— 【添加设备】— 【直接添加】— 按提示操作。\n\n②分享添加设备操作流程:\n【设备】— 【添加设备】— 【分享添加】— 按提示操作。</text>
     <view class='line'></view>
   </view>
 
@@ -19,7 +19,7 @@
 
   <view class=' cell'>
     <text class='titel'>设备离线时如何修改WI-FI</text>
-    <text class='value' space="nbsp">【设备】—【添加设备】—【直接添加/网络配置】— 【不添加设备，只配置家庭网络】</text>
+    <text class='value' space="nbsp">【设备】—【设备配网】— 按提示操作</text>
     <view class='line'></view>
   </view>
 

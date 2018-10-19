@@ -1,6 +1,6 @@
 <view class='containerAll'>
 
-  <text class='step'>第3/4步</text>
+  <text class='step'>第2/3步</text>
 
   <text class='steptitle'>操作"{{deviceImages[clkDeviceNum].title}}"进入微信配网模式</text>
 

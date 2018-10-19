@@ -30,9 +30,11 @@ Page({
       })
     }else{
       var userInfo = wx.getStorageSync('userInfo')
+      if(userInfo !=""){
       this.setData({
         phone: userInfo.loginName
       })
+      }
     }
   },
 
@@ -49,6 +51,7 @@ Page({
       password: e.detail.value
     })
   },
+  
   // 忘记密码
   forgetPsdClk: function() {
     wx.navigateTo({
@@ -68,18 +71,31 @@ Page({
     if (that.data.phone.length == 0 || that.data.password.length == 0) {
       util.showToast("用户名和密码不能为空")
     } else {
-      that.checkLoginInfo()
+      that.checkLoginInfo(that.data.phone, that.data.password)
     }
   },
+
+ // 设备说明书
+  specificationClk: function () {
+    wx.navigateTo({
+      url: '../loginSpecification/loginSpecification'
+    })
+  },
+
+  // 演示账户
+  demonstrationClk: function () {
+    this.checkLoginInfo("15980985264", "123789")
+  },
+
   // 登陆核对接口
-  checkLoginInfo: function() {
+  checkLoginInfo: function (phone, password) {
     var that = this;
 
     util.request({
       url: "/user/auth",
       data: {
-        loginName: that.data.phone,
-        password: that.data.password,
+        loginName: phone,
+        password: password,
       },
       success: function (result) {
         if (util.checkError(result.data) == true) {

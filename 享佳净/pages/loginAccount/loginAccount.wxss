@@ -6,7 +6,7 @@ page {
 /*登录图片*/
 .login-icon {
   width: 100%;
-  height: 50%;
+  height: 45%;
   display: flex;
 }
 .login-img {
@@ -70,4 +70,17 @@ page {
   color: white;
   background-color: #068de7;
   margin-top: 30rpx;
+}
+
+.login-other {
+  width: 90%;
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: rgb(173, 170, 168)
+}
+
+.login-other .register{
+  border-left: 1px solid rgb(173, 170, 168)
 }

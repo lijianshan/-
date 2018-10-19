@@ -28,6 +28,7 @@ page {
 .updatatime {
   width: 50%;
   height: 100%;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -48,6 +49,7 @@ page {
   width: 60%;
   height: 100%;
   position: relative;
+  /* background-color: red */
 }
 
 .circle {

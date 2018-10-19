@@ -5,7 +5,7 @@
       <text>{{airData.province}} {{airData.city}}</text>
     </view>
     <view class='updatatime'>
-      <image src="../../images/timer.png" mode='aspectFit'></image>
+      <!-- <image src="../../images/timer.png" mode='aspectFit'></image> -->
       <text>{{updataTime}}</text>
     </view>
   </view>
@@ -60,7 +60,7 @@
 
 <!-- 浮动 specification -->
 <view wx:if="{{AQIspecificationShow==true}}" class="containerAll AQIspecification" bindtap="AQIspecificationClk">
-  <image src="https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/AQIspecification.jpg" mode='aspectFit'></image>
+  <image src="https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/AQIspecificationHD.jpg" mode='aspectFit'></image>
 </view>
 
 <view wx:if="{{authorizationViewShow==true}}" class='containerAll authorizationView'>

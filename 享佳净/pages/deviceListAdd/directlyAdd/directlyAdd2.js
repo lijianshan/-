@@ -14,7 +14,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var key = deviceModelHandle.uidToUIDKey(options.UID)
     var devicemodel = deviceModelHandle.uidkeyToDeviceModel(key)
 
@@ -25,7 +25,7 @@ Page({
     })
   },
 
-  nextBtnClk: function() {
+  nextBtnClk: function () {
     var clkDeviceNum = 0
     var i = this.data.id
     if ((i == 1) || (i == 3))
@@ -41,7 +41,7 @@ Page({
     })
   },
 
-  finishBtnClk: function() {
+  finishBtnClk: function () {
     wx.switchTab({
       url: '../../deviceList/deviceList'
     })

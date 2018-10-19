@@ -1,0 +1,15 @@
+<scroll-view scroll-y="true" class='containerAll'>
+  <view class="container">
+
+    <text class='step'>第3/3步</text>
+
+    <text class='value'> 打开微信【扫一扫】，扫描下方的二维码(可先点击二维码保存),按提示进行配网</text>
+    <image bindtap="previewImg" mode="aspectFit" class='wifiSetQrcode' src="{{setWifiScanImgurl}}"></image>
+
+    <text class='title'>设备配网完成：回到主界面、Wi-Fi图标常亮</text>
+
+    <button class='finishBtn' bindtap='finishBtnClk'>设备配网完成，开始使用设备</button>
+
+  </view>
+
+</scroll-view>

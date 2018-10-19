@@ -29,4 +29,9 @@
 
   </view>
 
+  <view class='login-other'>
+      <text class="forgetPsd"  bindtap="specificationClk">设备说明书</text>
+      <text class="register"   bindtap="demonstrationClk">演示账户</text>
+  </view>
+
 </view>

@@ -55,18 +55,10 @@ Page({
         if (util.checkError(result.data) == true) {
           util.showToast("添加设备成功")
           wx.navigateTo({
-            url: "../directlyAdd/directlyAdd2_U?UID=" + scancodebuff[3]
+            url: "../directlyAdd/directlyAdd2?UID=" + scancodebuff[3]
           })
         }
       },
     }, true)
   },
-
-  // 点击wifi配网
-  wifiBtnClk:function(){
-    wx.navigateTo({
-      url: "../directlyAdd/directlyAdd2_W"
-    })
-  }
-
 })

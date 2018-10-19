@@ -1,17 +1,29 @@
 <view class='containerAll'>
 
 
-  <view class='cell' bindtap='deviceAddClk'>
-    <image class="icon" src="../../images/deviceAdd.png" mode='aspectFit'></image>
-    <text class='title'>添加设备</text>
+  <view class='cell'>
+    <view class='left'  bindtap='deviceAddClk'>
+      <image class="icon" src="../../images/deviceAdd.png" mode='aspectFit'></image>
+      <text class='title'>添加设备</text>
+    </view>
+    <view class='right' bindtap='deviceWifiSetClk'>
+      <image class="icon" src="../../images/WiFiSet.png" mode='aspectFit'></image>
+      <text class='title'>设备配网</text>
+    </view>
+
   </view>
 
   <view class='line'></view>
 
   <view class='cell'>
-    <image class="icon" src="../../images/deviceList.png" mode='aspectFit'></image>
-    <text class='title'>设备列表({{deviceStateList.length}}台)</text>
-    <image class="question" src="../../images/question.png" mode='aspectFit' bindtap='aboutClk'></image>
+    <view class='left'>
+      <image class="icon" src="../../images/deviceList.png" mode='aspectFit'></image>
+      <text class='title'>设备列表({{deviceStateList.length}}台)</text>    
+    </view>
+    <view class='right' bindtap='aboutClk'>
+      <image class="icon" src="../../images/question.png" mode='aspectFit'></image>    
+      <text class='title'>图标说明</text> 
+    </view>
   </view>
 
   <scroll-view scroll-y="true" class="deviceView}">

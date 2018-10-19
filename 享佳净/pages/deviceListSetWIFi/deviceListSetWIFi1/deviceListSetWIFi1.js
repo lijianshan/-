@@ -37,9 +37,9 @@ Page({
   },
   // 点击下一步
   nextBtnClk: function () {
-    var that =this
+    var that = this
     wx.navigateTo({
-      url: "../directlyAdd/directlyAdd3?clkDeviceNum=" + that.data.clkDeviceNum
+      url: "../deviceListSetWIFi2/deviceListSetWIFi2?clkDeviceNum=" + that.data.clkDeviceNum
     })
   }
 

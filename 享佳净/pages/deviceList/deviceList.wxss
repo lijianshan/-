@@ -9,28 +9,38 @@ page {
 .cell {
   width: 100%;
   height: 9.5%;
+  display: flex;
   font-size: 16px;
   border: 2rpx solid #f5f5f5;
   background-color: white;
+}
+.cell .left{
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
+.cell .right{
+  width: 50%;
+  height: 100%;  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .icon {
-  width: 10%;
-  height: 60%;
-  margin-left: 10rpx;
+  width: 15%;
+  height: 70%;
+  margin: 10rpx ;
 }
 
 .title {
-  width: 75%;
-  padding-left: 10rpx;
+  padding: 10rpx;
 }
-.question{
-  width: 10%;
-  height: 50%;
-}
+
 .deviceView{
   width: 100%;
   height: 80%;
