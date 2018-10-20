@@ -1,11 +1,13 @@
 
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    setWifiScanImgurl: "https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/setWifiScan.jpg"
+    setWifiScanImgurl: app.globalData.myCloudUrl+"setWifiScan.jpg"
   },
 
   /**

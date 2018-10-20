@@ -28,6 +28,8 @@ App({
   },
   globalData: {
     webUrl:"https://newwind.dnake-ehs.com/NewWindWeb/DEI/101/api",
+    myCloudUrl:"https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/",
+    specificationProperties:"%E8%AF%B4%E6%98%8E%E4%B9%A6/",
     userInfo: null,
     mainDeviceInfo:null
   }

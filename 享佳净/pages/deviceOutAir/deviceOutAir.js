@@ -16,6 +16,7 @@ Page({
     airWeeks: '',
     airOptions: '',
     updataTime: '',
+    AQIspecificationUrl:'',
   },
 
   /**
@@ -33,7 +34,8 @@ Page({
     that.setData({
       airWeeks: that.getAirWeeks(that.data.airData),
       airOptions: that.getAirOptions(that.data.airData),
-      updataTime: that.getUpdataTime(that.data.airData.updateTime)
+      updataTime: that.getUpdataTime(that.data.airData.updateTime),
+      AQIspecificationUrl: app.globalData.myCloudUrl +"AQIspecificationHD.jpg"
     })
   },
 

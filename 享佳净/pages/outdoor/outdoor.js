@@ -17,6 +17,7 @@ Page({
     airWeeks: '',
     airOptions: '',
     updataTime: '',
+    AQIspecificationUrl: '',
   },
 
   /**
@@ -24,6 +25,9 @@ Page({
    */
   onLoad: function(options) {
     this.getCircleViewStyle()
+    this.setData({
+      AQIspecificationUrl: app.globalData.myCloudUrl + "AQIspecificationHD.jpg",
+    })
   },
 
   /**

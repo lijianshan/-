@@ -72,10 +72,10 @@
   
   <view class='transition'></view>  <!-- 过渡 -->
 
-   <swiper indicator-dots="true" bindchange='changeClk' class='devicecontrollevelA'>
-      <block wx:for="{{[1,2]}}" wx:for-item="i">
+   <swiper indicator-dots="true" class='devicecontrollevelA'>
+      <block wx:for="{{[1,2]}}" wx:for-item="i" wx:key="navItems">
         <swiper-item>
-          <block wx:for="{{[3,4]}}" wx:for-item="j">
+          <block wx:for="{{[3,4]}}" wx:for-item="j" wx:key="navItems">
             <view  wx:if='{{i==1&&j==3}}' class='devicecontrollevelA_half'>
               <view class='Title'>运行模式</view>
               <view class='Content'>

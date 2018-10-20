@@ -1,4 +1,5 @@
 var util = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   data: {
@@ -8,13 +9,13 @@ Page({
         name: '控制器',
         open: false,
         pages: ['DAK806/DAK807', 'DAK817', 'DAK827'],
-        url: ['https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/%E8%AF%B4%E6%98%8E%E4%B9%A6/DAK806.pdf','','']
+        url: ['DAK806.pdf', 'DAK817.pdf','DAK827.pdf']
       }, {
         id: 1,
         name: '主机',
         open: false,
         pages: ['DAR系列节能变频高效净化全热交换器', 'DAU_DAT系列节能变频高效净化新风', 'DAU高效净化新风'],
-        url: ['', '', '']
+        url: ['DAR1.pdf', 'DAU_DAT1.pdf', 'DAU1.pdf']
       }
     ]
   },
@@ -22,10 +23,9 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
-    var urls ="https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/"+options.url
-    console.log("获取到的option页面是" + urls+"==")
+    var urls =options.url
     console.log(options)
-    if (options.url != undefined)
+    if (urls != undefined)
       this.showDocument(urls)
   },
  /**
@@ -62,22 +62,21 @@ Page({
       mask: true
     })
     wx.downloadFile({
-      url: urls,
+      url: app.globalData.myCloudUrl + app.globalData.specificationProperties+ urls,
       success: function (res) {
         var filePath = res.tempFilePath
         wx.openDocument({
           filePath: filePath,
           success: function (res) {
+            wx.hideLoading()
             console.log('打开文档成功')
           },
           fail: function (res) {
             console.log('打开文档fail')
             console.log(res)
+            wx.hideLoading()
             util.showToast(res.errMsg)
           },
-          complete: function (res) {
-            wx.hideLoading()
-          }
         })
       },
       fail:function(res){

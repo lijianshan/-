@@ -60,5 +60,5 @@
 
 <!-- 浮动 specification -->
 <view wx:if="{{AQIspecificationShow==true}}" class="containerAll AQIspecification" bindtap="AQIspecificationClk">
-  <image src="https://lg-rg404hpi-1257169638.cos.ap-shanghai.myqcloud.com/AQIspecificationHD.jpg" mode='aspectFit'></image>
+  <image src="{{AQIspecificationUrl}}" mode='aspectFit'></image>
 </view>

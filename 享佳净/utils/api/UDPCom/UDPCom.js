@@ -51,7 +51,7 @@ function httpsRequest(uidStr, commandData, requestHandler) {
     },
     success: function (res) {
       wx.hideLoading();
-      if (util.checkError(res.data) == true) {
+      if ((res.data.data != "") && (util.checkError(res.data) == true)) {
         util.showToast("操作成功")
         if (requestHandler.hasOwnProperty('successHandler')){
           requestHandler.successHandler(res)  
