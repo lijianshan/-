@@ -138,8 +138,16 @@ Page({
   analysisRunState: function(runStateBuff) {
     var that = this
     var temp
-    temp = (runStateBuff[46] & 0x40) >> 6 ? ((runStateBuff[46] & 0x3f) + 0.5) : (runStateBuff[46] & 0x3f)
-    temp = (runStateBuff[46] & 0x80) >> 7 ? ((runStateBuff[46] & 0x3f) * -1) : (runStateBuff[46] & 0x3f)
+
+    if (runStateBuff[46]<254){
+      temp = (runStateBuff[46] & 0x40) >> 6 ? ((runStateBuff[46] & 0x3f) + 0.5) : (runStateBuff[46] & 0x3f)
+      temp = (runStateBuff[46] & 0x80) >> 7 ? ((runStateBuff[46] & 0x3f) * -1) : (runStateBuff[46] & 0x3f)
+    } else temp = 0xfe
+
+    runStateBuff[50] = (runStateBuff[50] >= 1) ? 1 : 0
+    runStateBuff[51] = (runStateBuff[51] >= 1) ? 1 : 0
+    runStateBuff[52] = (runStateBuff[52] >= 1) ? 1 : 0
+
     that.setData({
       ['roomControlInfo.powerswitch']: runStateBuff[31],
       ['roomControlInfo.runmode']: runStateBuff[32],

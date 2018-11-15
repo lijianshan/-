@@ -8,13 +8,14 @@ Page({
         id: 0,
         name: '控制器',
         open: false,
-        pages: ['DAK806/DAK807', 'DAK817', 'DAK827'],
+        pages: ['DAK806/DAK807', 'DAK817'],
         url: ['DAK806.pdf', 'DAK817.pdf','DAK827.pdf']
       }, {
         id: 1,
         name: '主机',
         open: false,
-        pages: ['DAR系列节能变频高效净化全热交换器', 'DAU_DAT系列节能变频高效净化新风', 'DAU高效净化新风'],
+        pages:[],
+        //pages: ['DAR系列节能变频高效净化全热交换器', 'DAU_DAT系列节能变频高效净化新风', 'DAU高效净化新风'],
         url: ['DAR1.pdf', 'DAU_DAT1.pdf', 'DAU1.pdf']
       }
     ]
