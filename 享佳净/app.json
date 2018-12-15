@@ -23,6 +23,7 @@
     "pages/devicemanage/Weeks/Weeks",
     "pages/devicemanage/wifi/wifi",
     "pages/devicemanage/info/info",
+    "pages/devicemanage/ProjectSet/ProjectSet",
     "pages/outdoor/outdoor",
     "pages/system/system",
     "pages/system_aboutMe/system_aboutMe",

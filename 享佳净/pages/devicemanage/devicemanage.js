@@ -9,7 +9,7 @@ Page({
   data: {
     on_off: 'on',
     devicemanageItem1: [
-      "设备时钟同步", "温度校准", "周时段设置", "滤芯使用寿命复位", "修改WI-FI信息", "恢复出厂设置",
+      "设备时钟同步", "温度校准", "周时段设置", "滤芯使用寿命复位", "修改WI-FI信息", "恢复出厂设置", "工程设置(工程人员使用)",
     ],
     devicemanageItem2: [
       "设备信息", "显示历史统计", "设备二维码", "设备用户", "更新设备新风主机SN码"
@@ -102,6 +102,11 @@ Page({
           }
         })
         break;
+      case "7":
+        wx.navigateTo({
+          url: '../devicemanage/ProjectSet/ProjectSet'
+        })
+        break;        
       default:
         util.showToast("加速开发中")
         break;

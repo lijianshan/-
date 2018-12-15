@@ -2,7 +2,7 @@
 
   <view class='iconView'>
     <image class="iconimg" src="../../images/AppIcon.png" mode='aspectFit'></image>
-    <text class='versionnumber'>版本号：1.2.6</text>
+    <text class='versionnumber'>版本号：1.2.7</text>
   </view>
   <!-- 克服电话 -->
   <view class='cell' bindtap='phoneClk'>

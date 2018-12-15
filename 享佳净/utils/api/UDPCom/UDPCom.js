@@ -231,6 +231,15 @@ function sendUDP_Restart(uidStr, requestHandler) {
   commandData = getUDPCommandData(combuff, databuff)
   httpsRequest(uidStr, commandData, requestHandler)
 }
+// 设置设备转速值
+function sendUDP_MotorValue(uidStr, motorInfo, requestHandler) {
+  var combuff = [0x02, 0x16]
+  var databuff = []
+  databuff = databuff.concat(util.hexStringToByte(uidStr)).concat(motorInfo)
+  var commandData = []
+  commandData = getUDPCommandData(combuff, databuff)
+  httpsRequest(uidStr, commandData, requestHandler)
+}
 // 获取设备的状态
 function getUDP_deviceState(uidStr, requestHandler){
   var combuff = [0x03, 0x01]
@@ -261,7 +270,16 @@ function getUDP_DeviceInfo(uidStr, requestHandler) {
   commandData = getUDPCommandData(combuff, databuff)
   httpsRequest(uidStr, commandData, requestHandler)
 }
-
+// 获取设备转速值
+function getUDP_MotorValue(uidStr, motorNum, requestHandler) {
+  var combuff = [0x03, 0x05]
+  var data = [motorNum, 0x00, 0x00, 0x00]
+  var databuff = []
+  databuff = databuff.concat(util.hexStringToByte(uidStr)).concat(data)
+  var commandData = []
+  commandData = getUDPCommandData(combuff, databuff)
+  httpsRequest(uidStr, commandData, requestHandler)
+}
 module.exports = {
   getUDPCommandData: getUDPCommandData,
   sendUDP_powerSwitch: sendUDP_powerSwitch,
@@ -277,7 +295,9 @@ module.exports = {
   sendUDP_weeks: sendUDP_weeks,
   sendUDP_SetWIFI: sendUDP_SetWIFI,
   sendUDP_Restart: sendUDP_Restart,
+  sendUDP_MotorValue: sendUDP_MotorValue,
   getUDP_deviceState: getUDP_deviceState,
   getUDP_weeks: getUDP_weeks,
   getUDP_DeviceInfo: getUDP_DeviceInfo,
+  getUDP_MotorValue: getUDP_MotorValue,
 }

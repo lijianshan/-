@@ -1,0 +1,39 @@
+<view wx:if="{{superPasswordOk == false}}" class='containerAll'>
+  
+  <view class='passwordInputView'>
+    <input class="passwordText" type='number' placeholder-style="color:#ccc" placeholder="请输入厂家超级密码" bindinput="passwordInput" />
+  </view>
+  <view class='buttonView'>
+    <button bindtap='passwordSureClk'>确定</button>
+  </view>
+  
+</view>
+
+
+
+<view wx:else class='containerAll'>
+
+    <view class='titlesView'>
+    <block wx:for="{{titles}}" wx:key="navItems">
+      <view class="titles {{titlesIndex==index?'on':''}}" style="color:{{titlesIndex==index?'#eea231':''}}" id="{{index}}" bindtap="titlesSwitch">
+        {{item}}
+      </view>
+    </block>
+  </view>
+
+  <view class='cell line'></view>
+
+  <block wx:for="{{gears}}" wx:key="navItems">
+    <view class='cell' bindtap='gearsClk' id="{{index}}">
+      <text class='title'>{{item}}</text>
+      <input type='number' placeholder-style="color:#ccc"  bindinput="valueInput" 
+              value ="{{gearsValue[index]}}"/>
+    </view>
+  </block>
+
+  <view class='buttonView'>
+    <button bindtap='readClk'>读取</button>
+    <button bindtap='setClk'>设置</button>
+  </view>
+
+</view>
