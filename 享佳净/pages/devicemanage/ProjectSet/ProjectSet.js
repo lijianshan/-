@@ -35,7 +35,7 @@ Page({
   //密码输入确定
   passwordSureClk:function(e){
     var that =this
-    if (that.data.superPasswordValue  == "182507"){
+    if (that.data.superPasswordValue  == "181215"){
       that.setData({
         superPasswordOk: true
       })
